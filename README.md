@@ -1,6 +1,7 @@
 # eks_simple
 
 ## Table of contents
+* [On-demand](cluster/cluster1.yaml)
 * [AWS Node Termination Handler](#node-termination-handler)
 * [Kubernetes Metrics & Dashboard](#kubernetes-metrics-dashboard)
 * [Prometheus](#prometheus)
