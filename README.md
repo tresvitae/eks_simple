@@ -2,6 +2,9 @@
 
 ## Table of contents
 * [On-demand](cluster/cluster1.yaml)
+` eksctl create cluster -f cluster1.yaml`
+* [50% On-demand & spot instances](cluster/cluster2.yaml)
+` eksctl create nodegroup -f cluster2.yaml --include='ng-mixed' `
 * [AWS Node Termination Handler](#node-termination-handler)
 * [Kubernetes Metrics & Dashboard](#kubernetes-metrics-dashboard)
 * [Prometheus](#prometheus)
