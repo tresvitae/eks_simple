@@ -1,0 +1,19 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster
+  region: eu-west-1
+
+managedNodeGroups:
+- name: spot-nodes
+  instanceTypes:
+  - t2.micro
+  - t2.small
+  - t3.micro
+  - t3.small
+  spot: true
+
+# default: m5.large
+- name: spot-node-2
+  spot: true
