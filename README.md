@@ -12,6 +12,7 @@
 * [Nginx Deployment & Horizontal Pod Autoscaler](deployment/hpa.md)
 * [Delete](#delete)
 * [Managing Users & RBAC](rbac/rbac.md)
+* [Load Balancers](#load-balancers)
 * [AWS Node Termination Handler](#aws-node-termination-handler)
 * [Calico](#calico)
 * [Kubernetes Metrics & Dashboard](monitoring/metrics-dashboard.md)
@@ -32,6 +33,16 @@ eksctl scale nodegroup --cluster=my-cluster --nodes=4 --name=ng-1
 eksctl delete nodegroup --cluster=my-cluster --name=ng-mixed
 eksctl delete clusterr -f cluster.yaml
 ```
+
+## Load Balancers
+* [Default](loadbalancer/default.md)
+ - NodePort 
+ - LoadBalancer
+* [LoadBalancer](loadbalancer/loadbalancers.md)
+ - LoadBalancer == Network Load Balancer [url](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
+ - Ingress == Application Load Balancer [url](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)
+
+
 ## AWS Node Termination Handler
 [url](https://github.com/aws/aws-node-termination-handler)
 `kubectl apply -f https://github.com/aws/aws-node-termination-handler/releases/download/v1.14.0/all-resources.yaml`
