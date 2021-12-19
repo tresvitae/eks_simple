@@ -9,7 +9,7 @@
 * [Unmanaged Nodegroups](#unmanaged-nodegroups)
 * [Cluster Autoscaler](cluster/cluster-autoscaler.md)
 * [Scale](#scale)
-* [Nginx Deployment](deployment/deployment.md)
+* [Nginx Deployment & Horizontal Pod Autoscaler](deployment/hpa.md)
 * [Delete](#delete)
 * [Managing Users & RBAC](rbac/rbac.md)
 * [AWS Node Termination Handler](#aws-node-termination-handler)

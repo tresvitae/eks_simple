@@ -1,24 +1,22 @@
 # Cluster Autoscaler on AWS
 
-eksctl create cluster --config-file=autoscaler.yaml
+` eksctl create cluster --config-file=autoscaler.yaml `
 https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md
 
 
 ## Deploy the autoscaler
-the autoscaler itself:
+1. The autoscaler itself:
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 ```
-
-put required annotation to the deployment:
+2. Put required annotation to the deployment:
 ```bash
 kubectl -n kube-system annotate deployment.apps/cluster-autoscaler cluster-autoscaler.kubernetes.io/safe-to-evict="false"
 ```
-
-get the autoscaler image version:  
+3. Get the autoscaler image version:  
 open https://github.com/kubernetes/autoscaler/releases and get the latest release version matching your Kubernetes version, e.g. Kubernetes 1.14 => check for 1.14.n where "n" is the latest release version
 
-edit deployment and set your EKS cluster name:
+4. Edit deployment and set your EKS cluster name:
 ```bash
 kubectl -n kube-system edit deployment.apps/cluster-autoscaler
 ```
@@ -28,12 +26,11 @@ kubectl -n kube-system edit deployment.apps/cluster-autoscaler
 
 ## test the autoscaler
 
-### check nodes 
+1. Check nodes 
 ```bash
 kubectl get nodes
 ```
-
-### view cluster autoscaler logs
+2. View cluster autoscaler logs
 ```bash
 kubectl -n kube-system logs deployment.apps/cluster-autoscaler | grep -A5 "Expanding Node Group"
 

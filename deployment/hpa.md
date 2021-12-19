@@ -4,7 +4,7 @@
 kubectl apply -f nginx-deployment.yaml
 ```
 
-### scale the deployment
+### scale the deployment: HPA - Horizontal Pod Autoscaler
 
 ```bash
 kubectl scale --replicas=3 deployment/deploy-autoscaler
