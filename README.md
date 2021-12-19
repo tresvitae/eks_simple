@@ -7,6 +7,7 @@
 ` eksctl create nodegroup -f cluster2.yaml --include='ng-mixed' `
 * [Managed spot instances](cluster/spot-cluster.yaml)
 * [Unmanaged Nodegroups](#unmanaged-nodegroups)
+* [Cluster Autoscaler](cluster/cluster-autoscaler.md)
 * [Scale](#scale)
 * [Delete](#delete)
 * [AWS Node Termination Handler](#aws-node-termination-handler)

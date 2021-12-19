@@ -1,0 +1,54 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster
+  region: eu-west-1
+
+nodeGroups:
+  # Single AZ nodegroup
+  - name: scale-west1c
+    instanceType: t2.medium
+    desiredCapacity: 1
+    maxSize: 5
+    availabilityZones: ["eu-west-1c"]
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    labels:
+      nodegroup-type: stateful-workload
+      instance-type: onDemand
+    ssh:
+      publicKeyName: softserve
+  - name: scale-west1b
+    instanceType: t3.medium
+    desiredCapacity: 1
+    maxSize: 5
+    availabilityZones: ["eu-west-1b"]
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    labels:
+      nodegroup-type: stateful-workload
+      instance-type: onDemand
+    ssh:
+      publicKeyName: softserve
+  # Multi AZ nodegroup
+  - name: scale-spot
+    desiredCapacity: 3
+    maxSize: 10
+    instancesDistribution:
+      instanceTypes: ["t2.micro", "t3.micro", "t2.small", "t3.small"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 0
+    availabilityZones: ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    labels:
+      nodegroup-type: stateless-workload
+      instance-type: spot
+    ssh: 
+      publicKeyName: softserve
+
+availabilityZones: ["eu-west-1c", "eu-west-1b"]
