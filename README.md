@@ -9,6 +9,7 @@
 * [Unmanaged Nodegroups](#unmanaged-nodegroups)
 * [Cluster Autoscaler](cluster/cluster-autoscaler.md)
 * [Scale](#scale)
+* [Nginx Deployment](deployment/deployment.md)
 * [Delete](#delete)
 * [AWS Node Termination Handler](#aws-node-termination-handler)
 * [Kubernetes Metrics & Dashboard](monitoring/metrics-dashboard.md)
