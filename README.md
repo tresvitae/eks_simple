@@ -11,6 +11,7 @@
 * [Scale](#scale)
 * [Nginx Deployment](deployment/deployment.md)
 * [Delete](#delete)
+* [Managing Users & RBAC](rbac/rbac.md)
 * [AWS Node Termination Handler](#aws-node-termination-handler)
 * [Kubernetes Metrics & Dashboard](monitoring/metrics-dashboard.md)
 * [Prometheus](monitoring/prometheus.md)

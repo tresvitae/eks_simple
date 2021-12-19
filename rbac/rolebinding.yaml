@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: prod-viewer-binding
+  namespace: production
+subjects:
+- kind: User
+  name: prod-viewer ## AWS User name
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: prod-viewer-role ## K8s role.yaml
+  apiGroup: ""
